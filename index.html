@@ -1,270 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vishal | React Native Developer</title>
-
-<style>
-:root {
-  --bg: #0f2027;
-  --card: rgba(255,255,255,0.08);
-  --text: #ffffff;
-  --accent: #4dd0e1;
-}
-
-body.light {
-  --bg: #f5f7fa;
-  --card: #ffffff;
-  --text: #222;
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: var(--text);
-  transition: background 0.4s ease, color 0.4s ease;
-}
-
-/* ---------- LAYOUT ---------- */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px 20px;
-}
-
-/* ---------- HEADER ---------- */
-.header {
-  text-align: center;
-  margin-bottom: 50px;
-  animation: heroFade 1.2s ease forwards;
-}
-
-.header h1 {
-  font-size: 3rem;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-
-.header p {
-  margin: 4px 0;
-  opacity: 0.9;
-}
-
-.top-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-/* ---------- BUTTON ---------- */
-.btn {
-  padding: 12px 22px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  background: var(--accent);
-  color: #00363a;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(77,208,225,0.5);
-}
-
-/* ---------- CARD ---------- */
-.card {
-  background: var(--card);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-  opacity: 0;
-  transform: translateY(40px);
-  animation: cardReveal 0.9s ease forwards;
-}
-
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.4s; }
-.card:nth-child(4) { animation-delay: 0.6s; }
-.card:nth-child(5) { animation-delay: 0.8s; }
-
-.card:hover {
-  transform: translateY(-8px) scale(1.01);
-}
-
-/* ---------- HEADINGS ---------- */
-h2 {
-  color: var(--accent);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 8px;
-  margin-top: 0;
-}
-
-/* ---------- SKILLS ---------- */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.skills span {
-  background: linear-gradient(135deg, #4dd0e1, #26c6da);
-  color: #00363a;
-  padding: 8px 14px;
-  border-radius: 20px;
-  margin: 8px 8px 0 0;
-  font-size: 0.85rem;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-
-.skills span:hover {
-  transform: scale(1.15) rotate(-2deg);
-}
-
-/* ---------- LIST ---------- */
-ul {
-  padding-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  text-align: center;
-  font-size: 0.8rem;
-  opacity: 0.7;
-  margin-top: 40px;
-  animation: fadeIn 1.2s ease forwards;
-}
-
-/* ---------- ANIMATIONS ---------- */
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes cardReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 600px) {
-  .header h1 {
-    font-size: 2.2rem;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishal | React Native Developer</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --accent: #38bdf8;
+    }
+    body.light {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #111827;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: var(--accent); }
+    header p { opacity: 0.9; }
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: var(--accent);
+      color: #003049;
+      font-weight: bold;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+      animation: fadeUp 1s ease forwards;
+    }
+    h2 {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .skills span {
+      display: inline-block;
+      background: var(--accent);
+      color: #003049;
+      padding: 8px 14px;
+      border-radius: 20px;
+      margin: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.7;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+<header>
+  <h1>Hi, I'm <span>Vishal</span></h1>
+  <p>React Native Developer • Pune • 2+ Years Experience</p>
+  <button class="btn" onclick="toggleTheme()">🌗 Light / Dark</button>
+</header>
 
-  <div class="header">
-    <h1>Vishal</h1>
-    <p>React Native Developer • 2+ Years Experience</p>
-    <p>📍 Pune | Android | Cross-Platform Apps</p>
-
-    <div class="top-actions">
-      <button class="btn" onclick="downloadPDF()">⬇ Download PDF</button>
-      <button class="btn" onclick="toggleTheme()">🌗 Light / Dark</button>
-    </div>
+<section>
+  <div class="card">
+    <h2>About Me</h2>
+    <p>React Native Developer with strong experience in Android app development, REST APIs, Firebase, Redux Toolkit and Play Store deployment. Looking for React Native roles in Pune.</p>
   </div>
 
   <div class="card">
-    <h2>Professional Summary</h2>
-    <p>
-      React Native Developer with 2+ years of experience in building
-      scalable, high-performance Android applications. Expertise in
-      JavaScript, TypeScript, Redux Toolkit, REST APIs, Firebase and
-      Play Store deployment. Actively seeking Pune-based roles.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Technical Skills</h2>
+    <h2>Skills</h2>
     <div class="skills">
-      <span>React Native</span>
-      <span>JavaScript</span>
-      <span>TypeScript</span>
-      <span>Redux Toolkit</span>
-      <span>REST APIs</span>
-      <span>Firebase</span>
-      <span>Android</span>
-      <span>Git & GitHub</span>
-      <span>Agile</span>
+      <span>React Native</span><span>JavaScript</span><span>TypeScript</span>
+      <span>Redux</span><span>Firebase</span><span>REST API</span>
+      <span>Android</span><span>Git</span>
     </div>
   </div>
 
   <div class="card">
     <h2>Experience</h2>
     <ul>
-      <li>
-        <strong>React Native Developer</strong> – Current Company<br/>
-        📍 Laxmangarh | 🕒 1+ Year  
-        <br/>• Production-ready Android apps  
-        • API integration & performance tuning  
-        • Play Store releases
-      </li>
-      <li>
-        <strong>Flutter Developer</strong> – Previous Role<br/>
-        🕒 1 Year  
-        <br/>• Cross-platform UI focused development
-      </li>
+      <li><b>React Native Developer</b> – 1+ Year (Current)</li>
+      <li><b>Flutter Developer</b> – 1 Year</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>Projects</h2>
     <ul>
-      <li>💳 Wallet / Payment Application</li>
-      <li>📱 Business Utility Android App</li>
-      <li>🔥 Firebase Auth & Push Notifications</li>
+      <li>Wallet & Payment App</li>
+      <li>Business Utility App</li>
+      <li>Firebase Auth & Notifications</li>
     </ul>
   </div>
 
-  <div class="footer">
-    © 2026 Vishal • React Native Developer • Pune
+  <div class="card">
+    <h2>Contact</h2>
+    <p>📧 Email: your@email.com</p>
+    <p>💼 GitHub: github.com/rndeveloper1211</p>
+    <p>🔗 LinkedIn: linkedin.com</p>
+    <button class="btn" onclick="window.print()">⬇ Download Resume</button>
   </div>
+</section>
 
-</div>
+<footer>
+  © 2026 Vishal • React Native Developer
+</footer>
 
 <script>
 function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-
-function downloadPDF() {
-  window.print();
+  document.body.classList.toggle('light');
 }
 </script>
 
