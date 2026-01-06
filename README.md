@@ -1,8 +1,8 @@
 # Vishal – React Native Developer
 
 📍 Pune (Open to Relocation)  
-📧 Email: yourmail@gmail.com  
-🔗 GitHub: https://github.com/yourusername  
+📧 Email: r.n.developer.1211@gmail.com  
+🔗 GitHub: https://github.com/rndeveloper1211
 🔗 LinkedIn: https://linkedin.com/in/yourprofile  
 
 ---
