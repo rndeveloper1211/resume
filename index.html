@@ -1,14 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vishal – React Native Developer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vishal | React Native Developer</title>
+
+<style>
+:root {
+  --bg: #0f2027;
+  --card: rgba(255,255,255,0.08);
+  --text: #ffffff;
+  --accent: #4dd0e1;
+}
+
+body.light {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #222;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 6px;
+}
+
+.header p {
+  margin: 4px 0;
+  opacity: 0.85;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #00363a;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+h2 {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  padding-bottom: 6px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills span {
+  background: var(--accent);
+  color: #00363a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 6px 6px 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 30px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header h1 { font-size: 2rem; }
+}
+</style>
 </head>
+
 <body>
-  <h1>Vishal</h1>
-  <p>React Native Developer | Pune</p>
-  <p>
-    <a href="README.md">View Resume (README)</a>
-  </p>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Vishal</h1>
+    <p>React Native Developer • 2+ Years Experience</p>
+    <p>📍 Pune | Android | Cross-Platform Mobile Apps</p>
+
+    <div class="top-actions">
+      <button class="btn" onclick="downloadPDF()">⬇ Download PDF</button>
+      <button class="btn" onclick="toggleTheme()">🌗 Light / Dark</button>
+    </div>
+  </div>
+
+  <!-- ATS KEYWORDS SECTION -->
+  <div class="card">
+    <h2>Professional Summary</h2>
+    <p>
+      React Native Developer with 2+ years of experience in building scalable,
+      high-performance Android applications. Strong expertise in JavaScript,
+      TypeScript, Redux, REST APIs, Firebase, and Play Store deployment.
+      Actively seeking React Native Developer roles in Pune.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <span>React Native</span>
+      <span>JavaScript</span>
+      <span>TypeScript</span>
+      <span>Redux Toolkit</span>
+      <span>REST API</span>
+      <span>Firebase</span>
+      <span>Android</span>
+      <span>Git & GitHub</span>
+      <span>Agile</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Experience</h2>
+    <ul>
+      <li>
+        <strong>React Native Developer</strong> – Current Company<br/>
+        📍 Laxmangarh | 🕒 1+ Year  
+        <br/>• Developed production-ready Android apps  
+        • API integration, performance optimization  
+        • Debugging & Play Store release
+      </li>
+      <li>
+        <strong>Flutter Developer</strong> – Previous Experience<br/>
+        🕒 1 Year  
+        <br/>• Cross-platform UI development
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Projects</h2>
+    <ul>
+      <li>💳 Wallet / Payment Application (React Native)</li>
+      <li>📱 Business Utility App (Android)</li>
+      <li>🔥 Firebase Authentication & Push Notifications</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    © 2026 Vishal • React Native Developer • Pune
+  </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+function downloadPDF() {
+  window.print();
+}
+</script>
+
 </body>
 </html>
