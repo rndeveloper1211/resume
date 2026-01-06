@@ -19,106 +19,144 @@ body.light {
   --text: #222;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--bg);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: var(--text);
-  transition: all 0.3s ease;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* ---------- LAYOUT ---------- */
 .container {
   max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
+/* ---------- HEADER ---------- */
 .header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  animation: heroFade 1.2s ease forwards;
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 6px;
+  font-size: 3rem;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
 .header p {
   margin: 4px 0;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .top-actions {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 16px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
+/* ---------- BUTTON ---------- */
 .btn {
-  padding: 10px 18px;
-  border-radius: 25px;
+  padding: 12px 22px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
   background: var(--accent);
   color: #00363a;
-  font-weight: 600;
-  transition: transform 0.2s ease;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(77,208,225,0.5);
 }
 
+/* ---------- CARD ---------- */
 .card {
   background: var(--card);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  animation: fadeUp 0.8s ease forwards;
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardReveal 0.9s ease forwards;
 }
 
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.6s; }
+.card:nth-child(5) { animation-delay: 0.8s; }
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* ---------- HEADINGS ---------- */
 h2 {
   color: var(--accent);
-  border-bottom: 1px solid rgba(0,0,0,0.15);
-  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
+  margin-top: 0;
 }
 
+/* ---------- SKILLS ---------- */
 .skills {
   display: flex;
   flex-wrap: wrap;
 }
 
 .skills span {
-  background: var(--accent);
+  background: linear-gradient(135deg, #4dd0e1, #26c6da);
   color: #00363a;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 20px;
-  margin: 6px 6px 0 0;
+  margin: 8px 8px 0 0;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
+.skills span:hover {
+  transform: scale(1.15) rotate(-2deg);
+}
+
+/* ---------- LIST ---------- */
 ul {
-  padding-left: 18px;
+  padding-left: 20px;
 }
 
+ul li {
+  margin-bottom: 10px;
+}
+
+/* ---------- FOOTER ---------- */
 .footer {
   text-align: center;
   font-size: 0.8rem;
   opacity: 0.7;
-  margin-top: 30px;
+  margin-top: 40px;
+  animation: fadeIn 1.2s ease forwards;
 }
 
-/* Animation */
-@keyframes fadeUp {
+/* ---------- ANIMATIONS ---------- */
+@keyframes heroFade {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
@@ -126,9 +164,23 @@ ul {
   }
 }
 
-/* Responsive */
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 600px) {
-  .header h1 { font-size: 2rem; }
+  .header h1 {
+    font-size: 2.2rem;
+  }
 }
 </style>
 </head>
@@ -140,7 +192,7 @@ ul {
   <div class="header">
     <h1>Vishal</h1>
     <p>React Native Developer • 2+ Years Experience</p>
-    <p>📍 Pune | Android | Cross-Platform Mobile Apps</p>
+    <p>📍 Pune | Android | Cross-Platform Apps</p>
 
     <div class="top-actions">
       <button class="btn" onclick="downloadPDF()">⬇ Download PDF</button>
@@ -148,14 +200,13 @@ ul {
     </div>
   </div>
 
-  <!-- ATS KEYWORDS SECTION -->
   <div class="card">
     <h2>Professional Summary</h2>
     <p>
-      React Native Developer with 2+ years of experience in building scalable,
-      high-performance Android applications. Strong expertise in JavaScript,
-      TypeScript, Redux, REST APIs, Firebase, and Play Store deployment.
-      Actively seeking React Native Developer roles in Pune.
+      React Native Developer with 2+ years of experience in building
+      scalable, high-performance Android applications. Expertise in
+      JavaScript, TypeScript, Redux Toolkit, REST APIs, Firebase and
+      Play Store deployment. Actively seeking Pune-based roles.
     </p>
   </div>
 
@@ -166,7 +217,7 @@ ul {
       <span>JavaScript</span>
       <span>TypeScript</span>
       <span>Redux Toolkit</span>
-      <span>REST API</span>
+      <span>REST APIs</span>
       <span>Firebase</span>
       <span>Android</span>
       <span>Git & GitHub</span>
@@ -180,14 +231,14 @@ ul {
       <li>
         <strong>React Native Developer</strong> – Current Company<br/>
         📍 Laxmangarh | 🕒 1+ Year  
-        <br/>• Developed production-ready Android apps  
-        • API integration, performance optimization  
-        • Debugging & Play Store release
+        <br/>• Production-ready Android apps  
+        • API integration & performance tuning  
+        • Play Store releases
       </li>
       <li>
-        <strong>Flutter Developer</strong> – Previous Experience<br/>
+        <strong>Flutter Developer</strong> – Previous Role<br/>
         🕒 1 Year  
-        <br/>• Cross-platform UI development
+        <br/>• Cross-platform UI focused development
       </li>
     </ul>
   </div>
@@ -195,9 +246,9 @@ ul {
   <div class="card">
     <h2>Projects</h2>
     <ul>
-      <li>💳 Wallet / Payment Application (React Native)</li>
-      <li>📱 Business Utility App (Android)</li>
-      <li>🔥 Firebase Authentication & Push Notifications</li>
+      <li>💳 Wallet / Payment Application</li>
+      <li>📱 Business Utility Android App</li>
+      <li>🔥 Firebase Auth & Push Notifications</li>
     </ul>
   </div>
 
